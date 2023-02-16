@@ -1,6 +1,5 @@
 import { Color, getTimestamp, MultiClippingPlane, Viewer } from 'cesium';
 import { GUI } from 'dat.gui';
-// import { BMClippingPlane } from '../Src/main';
 
 let positions: any;
 let batch_index: number | undefined = undefined;

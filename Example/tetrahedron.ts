@@ -10,6 +10,7 @@ export const example = (viewer: Viewer, gui: GUI) => {
 		animation: false,
 		fill: true,
 		color: new Color(0, 0.8, 0.8, 0.5).toCssColorString(),
+		delta: 3,
 	};
 	const position = Cartesian3.fromDegrees(121.59, 38.93, 2000);
 	_obj = new Tetrahedron({
@@ -45,5 +46,14 @@ export const example = (viewer: Viewer, gui: GUI) => {
 		.name('颜色')
 		.onChange(v => {
 			_obj.color = Color.fromCssColorString(v);
+		});
+	folder
+		.add(options, 'delta')
+		.min(0)
+		.max(10)
+		.step(0.1)
+		.name('浮动偏移量')
+		.onChange(v => {
+			_obj.distance = v;
 		});
 };
